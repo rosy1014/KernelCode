@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 
 def random_dataset (shape,  n, dimension=2,):
 	""" Shape can "cc", "rt", "cs", "mn", "rn"
+		right now, the first 4 options have not been implemented.
 	"""
 	if shape == "cc":
 		return gen_two_circles(dimension, n)

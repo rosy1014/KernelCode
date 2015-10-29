@@ -45,6 +45,19 @@ class Perceptron(object):
 			if globalError == 0 or iteration > self.max_iter:
 				learned = True
 
+	def plot_separation(self):
+		for x in self.data_:
+			if x[2] == 1:
+				plt.plot(x[0], x[1], 'ob')
+			else:
+				plt.plot(x[0], x[1], 'or')
+		unit_vec = self.weight_/np.linalg.norm(self.weight_)
+		p1 = [unit_vec[1], -unit_vec[0]]
+		p2 = [- unit_vec[1], unit_vec[0]]
+		plt.plot([p1[0], p2[0]], [p1[1], p2[1]], '--k')
+		plt.show()
+
+
 
 
 
