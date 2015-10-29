@@ -57,6 +57,14 @@ class Perceptron(object):
 		plt.plot([p1[0], p2[0]], [p1[1], p2[1]], '-.')
 		plt.show()
 
+	def train_test_split(self, ratio):
+		shuffled_data = np.random.shuffle(self.data_)
+		train_size = self.data_.shape[1] * ratio
+		self.data_ = shuffled_data[:]
+
+	def test_classifier(self):
+		error = 0
+
 
 
 
