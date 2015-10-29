@@ -25,7 +25,7 @@ class Perceptron(object):
 
 	def response(self, x_vec):
 		y = np.multiply(self.weight_, x_vec[0:2])
-		print y
+		# print y
 		if np.sum(y) >= 0:
 			return 1
 		else:
