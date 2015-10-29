@@ -16,8 +16,8 @@ class Perceptron(object):
 	def loadDataFromFile(self, filename):
 		self.data_ = np.load(filename)
 
-	def generateRandomData(self, n):
-		self.data_ = genData.gen_two_randoms(n)
+	def generateRandomData(self, shape, n):
+		self.data_ = genData.random_dataset(shape, n)
 
 	def update_weight(self, x_vec):
 		y = self.response(x_vec)
@@ -54,7 +54,7 @@ class Perceptron(object):
 		unit_vec = self.weight_/np.linalg.norm(self.weight_)
 		p1 = [unit_vec[1], -unit_vec[0]]
 		p2 = [- unit_vec[1], unit_vec[0]]
-		plt.plot([p1[0], p2[0]], [p1[1], p2[1]], '--k')
+		plt.plot([p1[0], p2[0]], [p1[1], p2[1]], '-.')
 		plt.show()
 
 

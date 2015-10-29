@@ -8,19 +8,33 @@ def random_dataset (shape,  n, dimension=2,):
 		right now, the first 4 options have not been implemented.
 	"""
 	if shape == "cc":
-		return gen_two_circles(dimension, n)
+		return gen_two_circles(n)
 	elif shape == "rt":
-		return gen_two_rectangles(dimension, n)
+		return gen_two_rectangles(n)
 	elif shape == "cs":
-		return gen_two_curly_separable(dimension, n)
+		return gen_two_curly_separable(n)
 	elif shape == "mn":
-		return gen_two_moons(dimension, n)
+		return gen_two_moons(n)
 	else:
-		return gen_two_randoms(dimension, n)
+		return gen_two_randoms(n)
 
 
 def gen_two_circles(n, dimension=2):
-	return 0
+	pos = (np.random.rand(n) * 2 - 1)/2 
+	print pos
+	neg = (np.random.rand(n) * 2 - 1)/2
+	print neg
+	# xp = pos + 0.5
+	# yp = pos + 0.5
+	# xn = neg -0.5
+	# yn = neg + 0.5
+	inputs = []
+	for i in range(n):
+		inputs.append([pos[i] * random.randint(-1,1) + 0.6, pos[i] * random.randint(-1,1)+0.5, 1])
+		inputs.append([neg[i] * random.randint(-1,1) - 0.6, neg[i] * random.randint(-1,1)+0.5, -1])
+
+	return np.array(inputs)
+
 
 
 
