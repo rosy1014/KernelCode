@@ -94,7 +94,7 @@ def gen_embeded(n, dimension=2):
 	for i in range(n):
 		inputs.append([xp[i], yp[i], 1])
 		inputs.append([xn[i], yn[i], -1])
-
+    
 	return np.array(inputs)	
 	
 
